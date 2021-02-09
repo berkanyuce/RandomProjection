@@ -9,4 +9,20 @@ After that, loop starts. Generate random starting points and save the applicant 
 
 I want to explain all these with pseudo code and some images.
 
-
+Program start
+	Initialise variables: DNA, Sequence Number, Sequence Length
+	Start infinitive loop
+		Generate random motif length and tolerance number
+		Create bucket matrix with motif length and tolerance number
+		Create a projection by call function define_projection with motif 	length and tolerance number
+		for i=0: DNA length: Sequence length
+			Generate random starting point
+			Generate an applicant motif by call function search_motif 		with DNA, start point and projection
+			Edit the bucket matrix by call edit_matrix
+		end for loop
+		Check bucket matrix for applicant motif is best or not by call 	function control_matrix
+		if  applicant == Best
+			Print motif’s position and motif
+      Finish Program
+		else
+			Reset the bucket matrix
